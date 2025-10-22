@@ -12,6 +12,21 @@ module.exports = {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
+  		spacing: {
+  			'sidebar': 'calc(var(--sidebar-width) * 1px)',
+  			'sidebar-collapsed': 'calc(var(--sidebar-width-collapsed) * 1px)',
+  			'player-detail': 'calc(var(--player-detail-min-width) * 1px)',
+  		},
+  		width: {
+  			'sidebar': 'calc(var(--sidebar-width) * 1px)',
+  			'sidebar-collapsed': 'calc(var(--sidebar-width-collapsed) * 1px)',
+  		},
+  		minWidth: {
+  			'player-detail': 'calc(var(--player-detail-min-width) * 1px)',
+  		},
+  		maxHeight: {
+  			'player-detail': '550px',
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -52,6 +67,36 @@ module.exports = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
+  			},
+  			nfl: {
+  				player: {
+  					header: 'hsl(var(--player-header))',
+  					border: 'hsl(var(--player-border))'
+  				},
+  				info: {
+  					header: 'hsl(var(--info-header))',
+  					border: 'hsl(var(--info-border))'
+  				},
+  				usage: {
+  					header: 'hsl(var(--usage-header))',
+  					border: 'hsl(var(--usage-border))'
+  				},
+  				rushing: {
+  					header: 'hsl(var(--rushing-header))',
+  					border: 'hsl(var(--rushing-border))'
+  				},
+  				receiving: {
+  					header: 'hsl(var(--receiving-header))',
+  					border: 'hsl(var(--receiving-border))'
+  				},
+  				passing: {
+  					header: 'hsl(var(--passing-header))',
+  					border: 'hsl(var(--passing-border))'
+  				},
+  				fantasy: {
+  					header: 'hsl(var(--fantasy-header))',
+  					border: 'hsl(var(--fantasy-border))'
+  				}
   			}
   		},
   		keyframes: {

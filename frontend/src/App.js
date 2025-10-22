@@ -1053,24 +1053,24 @@ const FantasyDashboard = () => {
                     />
                   </div>
                   <div>
-                    <h1 className="text-2xl font-bold text-white tracking-tight">NFL Fantasy Analytics</h1>
-                    <p className="text-blue-200 text-sm">Professional Grade Statistics Platform</p>
+                    <h1 className="text-xl sm:text-2xl font-bold text-white tracking-tight">NFL Fantasy Analytics</h1>
+                    <p className="text-blue-200 text-xs sm:text-sm hidden sm:block">Professional Grade Statistics Platform</p>
                   </div>
                 </div>
-                <div className="hidden md:flex items-center space-x-2">
-                  <Badge className="bg-blue-500/20 text-blue-100 border-blue-400 text-xs px-3 py-1">
+                <div className="flex items-center space-x-2">
+                  <Badge className="bg-blue-500/20 text-blue-100 border-blue-400 text-xs px-2 sm:px-3 py-1">
                     DraftKings PPR
                   </Badge>
-                  <Badge className="bg-green-500/20 text-green-100 border-green-400 text-xs px-3 py-1">
+                  <Badge className="bg-green-500/20 text-green-100 border-green-400 text-xs px-2 sm:px-3 py-1 hidden sm:flex">
                     Live Data
                   </Badge>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-2">
-                <Button 
-                  size="sm" 
-                  className="bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg text-xs h-9"
+              <div className="flex items-center space-x-1 sm:space-x-2">
+                <Button
+                  size="sm"
+                  className="bg-blue-600 hover:bg-blue-700 text-white border-0 shadow-lg text-xs h-8 sm:h-9 px-2 sm:px-3"
                   onClick={() => {
                     refreshData();
                     toast.success('Refreshing data...', { duration: 1500 });
@@ -1118,9 +1118,9 @@ const FantasyDashboard = () => {
         {activeTab === 'data-table' && (
           <div className="flex h-full">
             {/* Left Sidebar Filters */}
-            <div 
-              className={`bg-gray-50 border-r border-gray-200 transition-all duration-300 ${filtersCollapsed ? 'w-16' : ''} flex-shrink-0 relative`}
-              style={{ width: filtersCollapsed ? '64px' : `${sidebarWidth}px` }}
+            <div
+              className={`bg-gray-50 border-r border-gray-200 transition-all duration-300 flex-shrink-0 relative ${filtersCollapsed ? 'w-sidebar-collapsed' : ''}`}
+              style={{ width: filtersCollapsed ? undefined : `${sidebarWidth}px` }}
             >
               {/* Resize Handle */}
               {!filtersCollapsed && (
@@ -1413,9 +1413,8 @@ const FantasyDashboard = () => {
 
               {/* Player Detail Panel */}
               {playerDetailOpen && selectedPlayer && (
-                <Card 
-                  className="w-[30%] shadow-xl border-l-4 border-blue-500"
-                  style={{ minWidth: '300px' }}
+                <Card
+                  className="w-[30%] min-w-player-detail shadow-xl border-l-4 border-blue-500"
                 >
                   <CardHeader className="pb-2 bg-gradient-to-r from-blue-50 to-indigo-50 px-4 py-3">
                     <div className="flex items-center justify-between">
@@ -1440,7 +1439,7 @@ const FantasyDashboard = () => {
                       {selectedPlayer?.team} • Last 10 games from {filters.week === 'all' ? 'current season' : `Week ${filters.week}`} backwards
                     </CardDescription>
                   </CardHeader>
-                  <CardContent className="p-4 overflow-y-auto" style={{ height: '550px' }}>
+                  <CardContent className="p-4 overflow-y-auto max-h-player-detail">
                     {/* Player Stats Summary */}
                     <div className="mb-4 p-3 bg-gray-50 rounded-lg">
                       <h4 className="text-sm font-semibold mb-2">Season Averages</h4>
